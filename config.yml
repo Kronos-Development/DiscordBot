@@ -1,0 +1,773 @@
+
+Bot_Token: "NzA3MDE4NjE3MjI4NzU0OTk1.XrCsbw.S7zkFm1ccrtONaQwj85QOUSEhjU"
+# This is your bot application's token. You can get this by going to discord's developer portal, creating an application, then turning the application into a bot.
+Bot_Key: "98733b7d-0a8c-423e-bf17-8767fd0d3e61"
+# For our security and the bots memory!
+Bot_Prefix: "!"
+# This is the symbol you will have to use to run all of CoreBot's commands.
+Theme_Color: "55FFFF"
+# This is the HEX color that will be used in all the bot's embeds.
+Error_Color: "#f52c2c"
+# This is the HEX color that will be used in all error embeds (Wrong channel, syntax errors, etc.)
+Success_Color: "#25de1f"
+# This is the HEX color that will be used in all success embeds (Successfully cleared messages, successfully banned a user, etc. )
+Backup_System: true
+# Should the backup system be enabled (Backs up data files, config, and lang every 12 hours). Set to false to disable.
+Missing_Roles_And_Channels_Chat_Notification: false
+# Should you be notified in chat with which roles and channels you are missing if you are missing any?\
+# This setting FORCES you to create the channels and roles before running any commands, gaining experience, gaining coins, etc. and disables ALL other message related features.
+Database:
+    Type: "sqlite"
+    # Set to mysql or sqlite
+    MySQL:
+        Host: ""
+        User: ""
+        Password: ""
+        Database: ""
+    # Only fill this out if you are using MySQL
+Leaderboards:
+    Per_Page:
+        Coins: 15
+        Level: 15
+        Invites: 15
+Join:
+    Role: ""
+    # Want to give multiple roles on join? Seperate each role with a comma. EX: "Member,Notifications,Unverified"
+    # This is the role given to users when they join. Put false to not give a role on join.
+    Join_Messages: true
+    # This will enable or disable join messages.
+    Channel: "welcome"
+    # This is the channel welcome mesages will be sent in.
+    Message: "embed"
+    # This is the message sent in the join channel when a user joins. If you would like the message to be sent as an embed put "embed".
+    DM_Message: false
+    # This is the message DMed to users when they join. Put false to not DM a welcome message to users.
+    Embed_Settings:
+        ### EMBED OPTIONS ###
+        # This requires the Join_Message setting to be "embed"
+        # VARIABLES:
+        # {user} - The user's username.
+        # {tag} - The user's name with their Discord tag (Example: Test#1234)
+        # {total} - The total amount of members in the Discord server
+        # {inviter} - The user who invited the new member
+        # Want to have a random embed color? Add a random option below and set it to "RANDOM" (Color: "RANDOM")
+        Title: "Welcome to Coral Network!"
+        # This is the title of the embed
+        Description: "Welcome to the Coral Network Discord, {user}!\n\nHere you can join giveaways, and stay up to date about any new server information! \n\n Invited By: {inviter}\nTotal Members: {total}"
+        # This is the description or main field of the embed. Want multiple, random join messages? Set the description to an array Ex: ["Welcome to the Discord, {user}", "Hello, {tag}!"]
+        Footer: "Welcome {tag}!"
+        # This is the footer of the embed. Put false to not have a footer in the embed.
+        Timestamp: true
+        # This will add the time the user joined at to the embed's footer if set to true
+        Thumbnail: "{userPFP}"
+        # Variables: {userPFP} {botPFP}
+    Invite_Rewards:
+        Enabled: false
+        # This will enable or disable the invite rewards system.
+        Invite_Rewards:
+            1: "Inviter"
+            5: "Inviter+"
+            #10: "Epic Inviter"
+            #15: "Super Inviter"
+            #30: "Invite Master"
+        # (Invites Needed): (Role)
+        # These are the roles given to users when they reach a certain amount of invites. Use the amount of invites as the key and the role as the value.
+Leave:
+    Leave_Messages: false
+    # This will enable or disable leave messages.
+    Channel: "welcome"
+    # This is the channel leave messages will be sent in.
+    Message: "embed"
+    # This is the message sent in the leave channel when a user leaves. If you would like the message to be sent as an embed put "embed".
+    Embed_Settings:
+        # VARIABLES:
+        # {user} - This will tag the user
+        # {tag} - This will print the user's name with their Discord tag (Example: Test#1234)
+        # {total} - This will print the total amount of members in the Discord server
+
+        # Want to have a random embed color? Add a random option below and set it to "RANDOM" (Color: "RANDOM")
+
+        Title: "Goodbye"
+        # This is the title of the embed
+        Description: "Goodbye, {user}! It was fun having you around... \n\n Total Members: {total}"
+        # This is the description or main field of the embed. Want multiple, random leave messages? Set the description to an array Ex: ["Goodybe, {user}", "See you later, {tag}!"]
+        Footer: false
+        # This is the footer of the embed. Put false to not have a footer in the embed.
+        Timestamp: true
+        # This will add the time the user joined at to the embed's footer if set to true
+        Thumbnail: "{userPFP}"
+        # Variables: {userPFP} {botPFP}
+Anti_Advertisement:
+    Chat:
+        Enabled: true
+        # This will enable or disable the chat anti-advertisement
+        Logs:
+            Enabled: true
+            Channel: "logs"
+            # This is the channel that notifications should go to
+    Status:
+        Enabled: false
+        # This will enable or disable the status anti-advertisement
+        Channel: "logs"
+        # This is the channel that status advertisement notifications will go to
+    Whitelist:
+        Websites:
+            - "google.com"
+        # These are websites that bypass the advertisement check. Users will be allow to post links or use these websites in their statuses that are from these sites.
+        Channels:
+            - advertisements
+        # These are the channels advertisements can be sent in. Put [] for none.
+    Bypass_Role: "VIP"
+    # This is the rank required to bypass the advertisment check. Users with this role will be able to advertise freely!
+Coin_System:
+    Coin_Amount: 10
+    # This is the approximate amount of coins users will get per message.
+    Daily_Coins: 1000
+    Work_Cooldown: 24
+    # Work cooldown is in hours
+    Shop_System:
+        Enabled: false
+        # This will enable or disable the shop system. If disabled, this will disable both the shop and buy commands.
+
+        Items:
+            VIP RANK:
+                role: "vip"
+                # This is the role that will be given when a user purchases the item.
+                name: "vip"
+                # This is the name of the item. The user will use this name to buy the item.
+                price: 3500
+                # This is the coins the user must pay to purchase the item.
+                description: "Cost: **3500** coins\nMultiplier: 2x\nCommand: `-buy vip`"
+            MVP RANK:
+                role: "mvp"
+                name: "mvp"
+                price: 5000
+                description: "Cost: **5000** coins\nMultiplier: 3x\nCommand: `-buy mvp`"
+                Required:
+                    Role: "vip"
+            MVP+ RANK:
+                role: "mvp+"
+                name: "mvp+"
+                price: 7500
+                description: "Cost: **7500** coins\nMultiplier: 4x\nCommand: `-buy mvp+`"
+                Required:
+                    Role: "mvp"
+                    Level: 5
+        Embed_Title: "**SERVER SHOP**"
+    Jobs:
+        McDonalds:
+            Tiers:
+                - name: "Janitor"
+                  hourlyPay: 40
+                  randomWorkMessages:
+                      - "You scrubbed those tables really well!"
+                      - "You mopped the floor fantasticly!"
+                  requirements:
+                      level: 3
+                - name: "Cashier"
+                  requirements:
+                      coins: false
+                      exp: 100
+                      level: 5
+                      role: false
+                      timesWorked: 3
+                  hourlyPay: 65
+                - name: "Cook"
+                  requirements:
+                      coins: 1000
+                      exp: false
+                      level: 7
+                      role: false
+                      timesWorked: 5
+                  hourlyPay: 85
+                - name: "Manager"
+                  requirements:
+                      coins: false
+                      exp: 1000
+                      role: "Helper"
+                      timesWorked: 7
+                  hourlyPay: 105
+            shifts:
+                - 4
+                - 6
+                - 8
+    Multipliers:
+        Enabled: false
+        Multipliers:
+            "VIP": 2
+            "MVP": 3
+            "MVP+": 4
+            # Format: (role name): (multiplier)
+    Embeds:
+        Coin_Top:
+            ### EMBED OPTIONS ###
+            # Variables:
+            # {page} - This will print the current page of the leaderboard you're viewing.
+            # {totalcoins} - This will print the total amount of coins collected from all users
+
+            Title: "Coin Leaderboard (Page #{page})"
+            # This is the title of the embed
+            Footer: "Total Coins Collected: {totalcoins}"
+            # Put false to not have a footer in the embed.
+            Thumbnail: "https://cdn.discordapp.com/attachments/637105382631669760/640007297711734784/CoinTopImage.png"
+Level_System:
+    Approximate_XP_Per_Message: 10
+    # Approximate_XP_Per_Message is that amount + a random number between 1 and 10 (for example, if the value was 50, the xp value would be between 50-60 per message)
+    Level_Roles:
+        5: "Level 5"
+        10: "Level 10"
+        #15: "Level 15"
+    # These are the roles given to the user when they reach a certain level.
+    Level_Up_Notification: false
+    # If false, no messages will be sent when a user levels up
+    Level_Up_Announce_Channel: false
+    # Channel level ups will be posted in
+    Delete_Level_Up_Embed: true
+    # If false, the level up message will not delete after a few seconds.
+
+    Embeds:
+        Level_Top:
+            ### EMBED OPTIONS ###
+            # Variables:
+            # {page} - This will print the current page of the leaderboard you've viewing.
+            # {totalxp} - This will print the total amount of XP collectted from all users.
+
+            Title: "Level Leaderboard (Page #{page})"
+            # This is the title of the embed.
+            Footer: "Total XP Collected: {totalxp}"
+            # Put false to not have a footer in the embed.
+            Thumbnail: "https://cdn.discordapp.com/attachments/637105382631669760/640007301042012199/LevelTopImage.png"
+    Blacklisted_Channels:
+        # A list of channels where gaining XP is not allowed in
+        - "staff-chat"
+Server_Backup_System:
+    Save_Permission: "SuperPerms"
+    # The role required to save a backup
+    Restore_Permission: "SuperPerms"
+    # The role required to restore a backup
+    Save:
+        roles: true
+        channel_permissions: true
+        channels: true
+Giveaway_System:
+    Emoji: ":tada:"
+    # This is Discord's emoji variable for the emoji that you want users to react to in order to enter the giveaway.
+    Emoji_Unicode: "🎉"
+    # This is the emoji unicode for the emoji that you want users to react to in order to enter the giveaway.
+    Max_Giveaways: 5
+    # This is the maximum amount of giveaways you can have running that the same time.
+    GCreate_Required_Rank: "Senior Admin"
+    # This is the rank required to run the gcreate command.
+    GDelete_Required_Rank: "Senior Admin"
+    # This is the rank required to run the gdelete command.
+    GReRoll_Required_Rank: "Senior Admin"
+    # This is the rank required to run the greroll command.
+    GStop_Required_Rank: "Senior Admin"
+    # This is the rank required to run the greroll command.
+Ticket_System:
+    Ticket_Creation_Channel: false
+    # This is the channel that tickets can be created in
+    Ticket_Limit: 5
+    # This is the limit of tickets a certain user can have open at one time.
+    Require_Reason: false
+    # If set to true, users will be required to add a reason when opening a ticket.
+    Support_Role: "Support"
+    # This is the role required to see the tickets, run the add, remove, and close command.
+    Close_All_Role: "Senior Admin"
+    # This is the role required to close all tickets at once.
+    Category: "Tickets"
+    # This is the category tickets will be put in.
+    Topic: "**User** {user} **Reason** {reason} **Time** {time} **ID** {id}"
+    # Put false to not have a ticket topic.
+    # VARIABLES:
+    # {user} - User that created the ticket
+    # {reason} - Reason the ticket was created for
+    # {time} - Time the ticket was created at
+    # {id} - ID of the ticket
+    Close_All_Confirmation: true
+    Close_Confirmation: false
+    DM_Closure_Reason: false
+    Ping_Support_Team: true
+    Ping_User: true
+    # Should the Support role be pinged when a ticket is created?
+    Transcripts:
+        Enabled: false
+        # Disable if using Ultimate Tickets Addon
+        Logs_Channel: "transcripts"
+        DM_To_User: true
+    Embed_Settings:
+        # VARIABLES:
+        # {user} - This will mention the user that opened the ticket
+        # {reason} This will display the user's reason for opening the ticket
+
+        Title: "Ticket"
+        # This is the title of the embed
+        Description: "{user}, thank you for creating a support ticket."
+        # This is the description or main field of the embed
+        Footer: "Coral Tickets"
+        # This is the footer of the embed. Set to false to not have an embed.
+        Timestamp: true
+        # This will add the time the user joined at to the embed's footer if set to true
+        Thumbnail: "{botPFP}"
+        # Variables: {botPFP} {userPFP}
+Filter_System:
+    Bypass_Role: "Mod"
+    # This is the rank required to bypass the filter system and say blacklisted words.
+
+    Messages_Filter:
+        Tasks:
+            channel: "tasks"
+            # The channel that the logs should be sent to
+            matches: "I need to .+"
+            # You can input a Regular Expression for the message to match
+            equals: "I need to do something"
+            # The message will be logged if it equals exactly that (not case sensitive)
+            includes: "I need to"
+            # The message will be logged if it includes this phrase (not case sensitive)
+            role: "Admin"
+            # The author has to have this role for the message to be logged
+    # Filter messages to a channel
+Verification_System:
+    Enabled: false
+    # This will enable or disable the verification system
+    Verified_Role: "Member"
+    # This is the role users will get after verifying
+    Type: "reaction"
+    # Types: "reaction" (React to a message to verify), "code" (Get sent a code in DMs and reply back in the channel with the code to get verified)
+    Send_Welcome_Message_Once_Verified: true
+    Reaction:
+        Emoji: "✅"
+        # This is the emoji users must react with in order to get verified
+        Message_ID: "PUT-MESSAGE-ID-HERE"
+        # This is the ID of the message users must react to in order to get verified
+    Code:
+        Length: "10"
+        # Length of the code. Must be at least 5
+        Channel: "verify"
+        # Name of the channel users can verify in
+Auto_Response_System:
+    Enabled: true
+    Auto_Responses:
+        # Basic example
+        - Text: "Autoresponse test #2"
+          # This is the text that will fire this auto response. This can include Regular Expressions.
+          DM: true
+          # If true, the content/embed will be sent to the user via DM
+          Type: "text"
+          # Text to text or embed
+          Content: "This is a DM from auto response"
+          # The plain text that should be sent
+          After_DM:
+              Success: "I've sent a message to your DMs"
+              # The message that will be sent in the channel if the message is sent successfully
+              Fail: "Your DMs are locked"
+              # The message that will be sent in the channel if the user's DMs are closed
+        # DM the user a message just containing text
+        - Text: "!apply"
+          Regex: true
+          DM: true
+          Type: "embed"
+          Embed:
+              Title: "Applications Link."
+              # This is the title of the embed
+              Description: "Staff: https://coral.gg/forum/view/11-staff-application/\nMedia: https://coral.gg/forum/view/12-media-application/\nBuilder: https://coral.gg/forum/view/22-builder-application/"
+              # This is the description of the embed
+              Footer: "Applications"
+              # The footer of the embed
+              Thumbnail: "{userPFP}"
+          After_DM:
+              Success: "I've sent a message to your DMs"
+              Fail: "Your DMs are locked"
+        - Text: "!code"
+          Regex: true
+          DM: true
+          Type: "embed"
+          Embed:
+              Title: "Our [Corebot]"
+              # This is the title of the embed
+              Description: "Coral is usign a highly modified version of Corebot."
+              # This is the description of the embed
+              Footer: "Code Command"
+              # The footer of the embed
+              Thumbnail: "{botPFP}"
+          After_DM:
+              Success: "I've sent a message to your DMs"
+              Fail: "Your DMs are locked"
+Announcements:
+    Embed_Settings:
+        # Variables: {userPFP}, {botPFP}, {title}, {description}, {tag}
+        Title: "{title}"
+        Description: "{description}"
+        Footer: "Posted By: {tag}"
+        Timestamp: true
+        Footer_Avatar_Image: "{userPFP}"
+        Author_Avatar_Image: "{botPFP}"
+Link:
+    Links:
+        IP: "coral.gg"
+        Store: "store.coral.gg"
+        Twitter: "twitter.com/PlayCoral"
+        # Add more links by setting the name of the link as the key, and the actual link as the value
+
+    Embed_Settings:
+        Title: "Links"
+        #
+        Description: ":link: All links related to the server"
+        ##########################
+Role_Menu:
+    Menus:
+        Server:
+            description: "React with the following emojis to get the corresponding role\n\n{emojiroles}"
+            🇺: "Updates"
+            🇵: "Polls"
+            🇪: "Events"
+            🎉: "Giveaways"
+        #Game:
+        #🇲: "Minecraft"
+        #🇫: "Fortnite"
+        # Use the emoji as the key and the role as the value.
+Temp_Channels:
+    Enabled: true
+    # Set to 'false' to disable temp channels
+    Join_To_Create: "Temp Channel"
+    # The voice channel that users should join to create a temp channel
+    Category: "Temp Channels"
+    # The category that temp voice channels should go under
+Suggestions:
+    Enabled: true
+    Type: "revivenode"
+    # Types: "normal", "revivenode", "both"
+    # Normal: Suggestions are be made by running the -suggest command
+    # Revivenode: Suggestions are made by messaging in the suggestions channel
+    # Both: You can type in the channel to suggest, and run the command to suggest
+    Emojis:
+        Upvote: "✅"
+        Downvote: "❌"
+        Accept: "⭐"
+        Deny: "🔒"
+        Reset: "⚫"
+    Channels:
+        Suggestions: "suggestions"
+        # This is the channel suggestions will be posted in
+        AcceptedSuggestions: false
+        # If false, suggestions that are accepted will stay in the suggestions channel and the embed will be modified to show that it was accepted
+        # If set to the name of a channel, accepted suggestions will be sent to that channel
+        DeniedSuggestions: false
+        # If false, suggestions that are denied will stay in the suggestions channel and the embed will be modified to show that it was denied
+        # If set to the name of a channel, denied suggestions will be sent to that channel
+    React_To_Own_Suggestion: false
+    # Should users be able to upvote or downvote their own suggestions?
+    # NOTE: You must have footer set to "From: {tag}" for this to work feature to work.
+    Embed_Settings:
+        # VARIABLES:
+        # {user} - Mentions the user that made the suggestion
+        # {tag} - Shows the tag of the user sending the suggestion
+        # {userPFP} - Shows the profile picture of the user sending the suggestion
+        # {botPFP} - Shows the bot's profile picture
+        # {suggestion} - The suggestion made by the user
+        Title: "Suggestions"
+        Description: "{suggestion}"
+        Footer: "From: {tag}"
+        Footer_Avatar_Image: "{userPFP}"
+        Timestamp: true
+IP:
+    Server_IP: "Play.example.com"
+    # This is the IP that will be shown in the embed when running the ip command.
+    Embed:
+        Title: "Server IP"
+        Author_Avatar_Image: "https://pscube.com/wp-content/uploads/2017/06/24-1024x1024.jpg"
+Slots_System:
+    Emojis:
+        ":lemon:":
+            Chance: 35
+            Coins: 0.023
+        ":skull:":
+            Chance: 5
+            Coins: 0.92
+        ":heart:":
+            Chance: 35
+            Coins: 0.023
+        ":large_blue_diamond:":
+            Chance: 25
+            Coins: 0.21
+        # The main value is the emoji.
+        # The Chance value is the chance out of 100 that this emoji will picked.
+        # The Coins value is the amount of coins multiplied by the gambled amount that the user will get if this emoji is picked.
+        # Remember that 9 emojis will be picked.
+        # The Chance values MUST all add up to 100.
+Status:
+    Server_Name: "Coming Soon..."
+
+    Server_Status:
+        Revivenode SMP:
+            bungee: false
+
+            # Set to true if this server is the main bungee server
+
+            PingURL: "https://api.minetools.eu/ping/play.revivenode.com/25565"
+            QueryURL: "https://api.minetools.eu/query/play.revivenode.com/25565"
+
+            # Query port should be set in your server.properties file
+        Hypixel:
+            PingURL: "https://api.minetools.eu/ping/mc.hypixel.net/25565"
+            QueryURL: "https://api.minetools.eu/query/mc.hypixel.net/25565"
+        Example:
+            PingURL: "https://api.minetools.eu/ping/play.example.com/25565"
+            QueryURL: "https://api.minetools.eu/query/play.example.com/25565"
+Lock_Unlock:
+    Whitelisted:
+        - "Owner"
+        - "Admin"
+        - "Mod"
+        - "Trainee"
+    # These are roles that the bot will allow to send messages in the channel you lock (All other roles will not be able to speak if locked, unless they're in the ignore setting,)
+    Ignore:
+        - "Muted"
+    # These are roles the bot will ignore when changing permissions to the channel. Permissions for these channels will not change at all.
+Applications:
+    Channel_Format: "application-%tag%"
+    # The channel name when an application is created, placeholders are %username%, %id%, and %tag%
+    Category: "Tickets"
+    # The category to put applications in
+    Reviewer_Role: "Admin"
+    # The role that can view applications and accept/deny them
+    Mention_Reviewer_Role: false
+    # Should the reviewer role be mentioned when an application is opened. Set to false to disable.
+    New_Embed:
+        Description: "%ping%, thank you for creating an application. Fill out these questions and our team will review your application as soon as possible."
+        # The description for the embed. %ping% is the only placeholder as of now
+        Title: "Application"
+    # The embed sent in a new application
+    Position_Embed:
+        Description: "What position would you like to apply for? The current positions are %positions%"
+        Title: "Position"
+    # The embed for the question to ask what position they want to apply for
+    Application_Complete:
+        Description: "Your application is complete. A staff member will look over it and make a decision as soon as possible."
+        Title: "Application Complete"
+    Add_Role_When_Accepted: true
+    # Set to true to automatically add the role the user is applying for when they are accepted
+    Delete_Embeds_And_Send_Answers: true
+    # Should the messages all be deleted and send an embed with a list of answers?
+    DM_Decision: true
+    # Set to true to DM the user the decision on their application (accepted/denied)
+    Logs:
+        Enabled: false
+        Channel: "logs"
+        Paste_Site: "https://paste.corebot.dev"
+    Positions:
+        Support:
+            Role: "Support Team"
+            Questions:
+                - "What is your name?"
+                # Just ask the question
+                - Question: "What is your age?"
+                  RegExp: '\d+'
+                  Failed_RegExp: "That is not a valid age."
+                # Ask the question and make sure it matches a Regular Expression
+                - Question: "What is your age range?"
+                  Options:
+                      - "10-14"
+                      - "15-18"
+                      - "20-25"
+                # Ask a question with options
+                - "Do you have any experience with support?"
+Permissions:
+    Inheritance: true
+    # Should roles above the set role get access to the command/feature?
+    Bot_Management_Commands:
+        Command: "Owner"
+        Set_Status: "Senior Admin"
+        Set_Prefix: "Manager"
+        Prefix: "Manager"
+        Reload: "Owner"
+        Module: "Manager"
+        Reset: "Senior Admin"
+        Set: "Manager"
+        Eval: []
+        # IDs that can use the eval command, set to [] to disable. Keep in mind the eval command is dangerous and can do many things to your Discord server. Only give it to trusted users that know what they're doing.
+    Staff_Commands:
+        Announce: "Senior Admin"
+        Application: "SuperPerms"
+        Rolemenu: "Senior Admin"
+        Ban: "Mod"
+        Unban: "Mod"
+        Kick: "Mod"
+        Filter: "Senior Admin"
+        Staffhelp: "Mod"
+        Clear: "Mod"
+        Say: "Admin"
+        Accept_Deny_Suggestions: "Owner"
+        Update: "Senior Admin"
+        Vote: "Senior Admin"
+        Lock: "Senior Admin"
+        Unlock: "Senior Admin"
+        Mute: "Mod"
+        Unmute: "Mod"
+        Blacklist: "Mod"
+        Unblacklist: "Mod"
+        Tempmute: "Mod"
+        Tempban: "Mod"
+        Msg: "Senior Admin"
+        Give: "Senior Admin"
+        Take: "Senior Admin"
+        Warn: "Mod"
+        Topic: "Senior Admin"
+        Slowmode: "Mod"
+        Createrole: "Owner"
+        Deleterole: "Owner"
+        Removewarn: "Helper"
+        History: "Helper"
+    User_Commands:
+        Google: "@everyone"
+        Remindme: "@everyone"
+        Suggest: "@everyone"
+        Serverinfo: "@everyone"
+        Roleinfo: "@everyone"
+        Pay: "@everyone"
+        Daily: "@everyone"
+        Apply: "Senior Admin"
+    Ticket_Commands:
+        New: "@everyone"
+        Add: "Mod"
+        Remove: "Mod"
+        Close: "@everyone"
+        Closeall: "Senior Admin"
+Help_Menu_Type: "normal"
+# Types: 'categorized', 'normal', 'dm'
+Slowmode_Default_Amount: 2
+# Amount is in seconds
+Cooldowns:
+    experience: 5
+    coins: 5
+    report: 120
+# Cooldown is in seconds
+Cooldown_Bypass: "Mod"
+# The role (and above) that can bypass cooldowns
+
+### CHANNELS ###
+Channels:
+    Bug_Reports: "bug-reports"
+    # This is the channel bug reports will be sent to.
+    Vote: "polls"
+    # This is the channel votes will be sent to.
+    Reports: "reports"
+    # This is the channel reports will be sent to.
+
+### LOGS ###
+Logs:
+    Punishments:
+        Enabled: true
+        Channel: "logs"
+    Tickets:
+        Enabled: true
+        Channel: "logs"
+    MessageEdit:
+        Enabled: true
+        Channel: "logs"
+    MessageDelete:
+        Enabled: true
+        Channel: "logs"
+    Chat_Logs:
+        Enabled: true
+        Blacklisted_Channels:
+            - staff
+        # If the channel is not in the blacklist, all messages will get logged to the /logs/(date).txt file
+        # Set to [] to not blacklist any channels
+    Role_Logs:
+        Enabled: true
+        Channel: "logs"
+        # Roles added and removed from a user
+    Command_Logs:
+        Enabled: false
+        Channel: "logs"
+    Nick_Change_Logs:
+        Enabled: true
+        Channel: "logs"
+    Channel_Created:
+        Enabled: true
+        Channel: "logs"
+    Channel_Deleted:
+        Enabled: true
+        Channel: "logs"
+    Updated_Pins:
+        Enabled: true
+        Channel: "logs"
+    DMs:
+        Enabled: true
+        Channel: "logs"
+    Channel_Update:
+        Enabled: true
+        Channel: "logs"
+        Ignore:
+            - "ticket-"
+            - "application-"
+            - "Channels:"
+            - "Bots:"
+            - "Humans:"
+            - "Total Members:"
+            - "Status:"
+            - "Online:"
+            - "IP:"
+            # Channels to ignore in the channel update event. This is added to prevent logs being spammed from the MC Status and Discord Status addons.
+            # It does not need to be the full name, just the start of it will work.
+
+### COMMANDS ###
+Commands:
+    Remove_Command_Messages: true
+    # If set to true the bot will delete user's messages when they execute a command.
+    Require_Commands_Channel: true
+    # Require Commands to be sent in the bot spam channel
+    Allow_Commands_In_Tickets: true
+    # Allow commands to be sent in tickets (only if Require_Commands_Channel is true)
+    Command_Channels:
+        - bot-commands
+    # A list of channels that commands are allowed in
+    Bypass_Commands_Channel: "Mod"
+    # This is the rank required in order to run commands outside of the commands channel.
+    Ignore_Case: true
+    # If set to true, commands can be any capitalization
+    Disable_XP: true
+    # If set to true, users won't be given XP when they run commands
+    Disable_Coins: true
+    # If set to true, users won't be given coins when they run commands
+    Invalid_Command_Message: false
+
+### PUNISHMENT SYSTEM ####
+Punishment_System:
+    Punish_Staff: false
+    # Should banning staff be allowed? Note: You will only be able to ban staff under you
+    Mute_Role: "Muted"
+    # This is the role given to muted users
+    Auto_Warn_Punishments:
+        3: [tempmute, Auto Punish, 10m]
+        5: [tempban, Auto Punish, 3d]
+        8: [ban, Auto Punish]
+        # (warn count): [punishment type, reason, length (required for tempmute and tempban)]
+
+### BOT STATUS CYCLING ###
+Status_Cycling:
+    Enabled: false
+    # Should status cycling be enabled
+    Statuses:
+        - { activity: "{online} on Coral.gg", type: "watching" }
+        - { activity: "Coral.gg", type: "playing" }
+        - { activity: "Coral.gg/store", type: "streaming" }
+        - { activity: "Coral.gg/forum", type: "listening" }
+    # These are the statuses the bot will go through
+    Time: 7
+    # Time in seconds untill the bot will change to the next status
+    Type: "ordered"
+    # Types:
+    #  random - The bot will randomly choose between the status
+    #  ordered - The bot will go through the status in order as listed above
+
+Updates:
+    Post_Updates_By_Messaging_In_Channel: true
+    # Should you be able to make an update by messaging in the updates channel?
+
+Paste_Site: "https://paste.corebot.dev"
+# The paste site to use
+
+# DO NOT CHANGE THIS!
+BOT_VERSION: "4.3.1"
